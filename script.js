@@ -139,8 +139,7 @@ function doublebeep(){
 function sendNotification(){
     if (Notification.permission === "granted"){
             new Notification("Timer",{
-                body : "Timer Finished",
-                icon : "./clock.png"
+                body : "Timer Finished"
             })
         }
 }
@@ -223,5 +222,6 @@ function reset(){
     timerFields.forEach(function(field){
         field.setAttribute("contenteditable","true");
     })
+
 
 }
