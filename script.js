@@ -139,7 +139,8 @@ function doublebeep(){
 function sendNotification(){
     if (Notification.permission === "granted"){
             new Notification("Timer",{
-                body : "Timer Finished"
+                body : "Timer Finished",
+                icon : "./clock.png"
             })
         }
 }
@@ -225,3 +226,4 @@ function reset(){
 
 
 }
+
