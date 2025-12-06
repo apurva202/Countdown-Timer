@@ -1,0 +1,168 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    background: #121212;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.timer {
+    display: flex;
+    font-size: 6rem;
+    justify-content: center;
+}
+
+.timer div {
+    padding: 0.4em 0.2em;
+    min-width: 1.4em;
+    text-align: center;
+    border-radius: 12px;
+    background: #1f1f1f;
+    border: 3px solid #333;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    transition: 0.2s;
+}
+
+.timer div:focus {
+    outline: none;
+    border-color: #4A90E2;
+    box-shadow: 0 0 20px rgba(74, 144, 226, 0.5);
+}
+
+.timer span {
+    position: relative;
+    top: 30px;
+    margin: 0 0.2em;
+    user-select: none;
+    color: #777;
+}
+
+.controls {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.timer div[contenteditable="true"]:empty:before {
+    content: attr(data-placeholder);
+    color: #777;
+}
+
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+    font-size: 1.5rem;
+    height: 8vh;
+    width: 10vw;
+}
+
+.start {
+    background: #28a745;
+    color: white;
+}
+
+.stop {
+    background: #dc3545;
+    color: white;
+}
+
+.reset {
+    background: #ffc107;
+    color: black;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+@media screen and (max-width: 1024px) {
+    .timer {
+        font-size: 5rem;
+    }
+
+    .btn {
+        width: 15vw;
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
+        min-height: 100dvh;
+        height: 100dvh;
+        overflow: hidden;
+    }
+
+    .timer {
+        font-size: 13vw;
+    }
+
+    .timer div {
+        padding: 0.2em 0.1em;
+        border-width: 2px;
+        min-width: 1.2em;
+        border-radius: 8px;
+    }
+
+    .timer span {
+        top: 10px;
+        font-size: 0.8em;
+    }
+
+    .controls {
+        flex-direction: row;
+        gap: 10px;
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    .btn {
+        width: 28vw;
+        height: 55px;
+        font-size: 1.1rem;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .timer {
+        font-size: 11vw;
+    }
+
+    .btn {
+        width: 30vw;
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    body {
+        min-height: 100dvh;
+    }
+
+    .timer {
+        font-size: 3rem;
+    }
+
+    .controls {
+        margin-top: 15px;
+    }
+
+    .btn {
+        height: 40px;
+        font-size: 1rem;
+    }
+}
